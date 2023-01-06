@@ -1,0 +1,73 @@
+@import url('https://fonts.cdnfonts.com/css/one-piece');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'One Piece', sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+  margin: 0;
+}
+
+.logo {
+  color: rgb(252, 68, 68);
+  text-shadow: rgb(68, 67, 66) 0.1em 0.1em 0.2em;
+}
+
+/*Estilizando os cards*/
+
+.container{
+
+  display: flex;
+  width: 90vh; /*largura*/
+}
+
+.panel {
+  background: auto 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 80vh;
+  border-radius: 50px;
+  color: aliceblue;
+  cursor: pointer;
+  flex: 0.5;
+  margin: 10px;
+  position: relative;
+  transition: flex 0.7s ease-in;
+}
+
+.panel h3 {
+  font-size: 24px;
+  position: absolute;
+  top: 20px;
+  margin: 0;
+  color: aliceblue;
+  text-shadow: black 0.1em 0.1em 0.2em; /*adicionando sombra ao texto para deixar mais legivel, neste caso,um texto na cor branca escrito em fundo em tom de azul claro.*/
+}
+
+.panel.active {
+  flex: 5;
+}
+
+.panel.active h3 {
+  opacity: 1;
+  transition: opacity 0.3s ease-in 0.4s;
+}
+
+ /*responsividade*/
+
+@media (max-width: 480px) { 
+  .container {
+    width: 100vw;
+  }
+
+  .panel:nth-of-type(4),
+  .panel:nth-of-type(5) {
+    display: none;
+  }
+}
